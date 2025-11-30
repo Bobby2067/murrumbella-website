@@ -1,0 +1,211 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* Murrumbella Brand Palette */
+:root {
+  /* Murrumbella Brand Colors */
+  --sage-grey: #8e9186;
+  --river-blue: #5a7684;
+  --clay-bark: #cbb7a2;
+  --charcoal-ridge: #3e3e3e;
+  --copper-accent: #b56a4d;
+
+  /* Muted Variations */
+  --sage-grey-light: #a8aa9f;
+  --river-blue-light: #7a96a4;
+  --clay-bark-light: #e5ddd2;
+  --charcoal-ridge-light: #5e5e5e;
+
+  /* Background tones */
+  --murrumbella-cream: #f8f6f3;
+  --murrumbella-mist: #ebe9e5;
+
+  --background: #f8f6f3;
+  --foreground: #3e3e3e;
+  --card: #ffffff;
+  --card-foreground: #3e3e3e;
+  --popover: #ffffff;
+  --popover-foreground: #3e3e3e;
+  --primary: #3e3e3e;
+  --primary-foreground: #f8f6f3;
+  --secondary: #ebe9e5;
+  --secondary-foreground: #3e3e3e;
+  --muted: #ebe9e5;
+  --muted-foreground: #8e9186;
+  --accent: #b56a4d;
+  --accent-foreground: #f8f6f3;
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: #cbb7a2;
+  --input: #cbb7a2;
+  --ring: #5a7684;
+  --chart-1: #5a7684;
+  --chart-2: #8e9186;
+  --chart-3: #b56a4d;
+  --chart-4: #cbb7a2;
+  --chart-5: #3e3e3e;
+  --radius: 0.5rem;
+}
+
+@theme inline {
+  --font-sans: "Montserrat", sans-serif;
+  --font-serif: "Playfair Display", serif;
+
+  /* Murrumbella Color System */
+  --color-sage-grey: var(--sage-grey);
+  --color-river-blue: var(--river-blue);
+  --color-clay-bark: var(--clay-bark);
+  --color-charcoal-ridge: var(--charcoal-ridge);
+  --color-copper-accent: var(--copper-accent);
+  --color-murrumbella-cream: var(--murrumbella-cream);
+  --color-murrumbella-mist: var(--murrumbella-mist);
+
+  /* Spacing Scale */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 40px;
+  --space-6: 48px;
+  --space-8: 64px;
+  --space-10: 80px;
+  --space-12: 96px;
+  --space-15: 120px;
+
+  /* Shadcn color mappings */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--clay-bark);
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--charcoal-ridge);
+  }
+}
+
+@layer utilities {
+  .text-display {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  .text-heading {
+    font-family: "Playfair Display", serif;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+
+  .text-body {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.8;
+  }
+
+  .text-label {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+  }
+
+  .container-custom {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 var(--space-6);
+  }
+
+  .container-narrow {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 var(--space-6);
+  }
+
+  .glass-panel {
+    backdrop-filter: blur(16px);
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .grain-texture {
+    background-image: radial-gradient(circle at 1px 1px, rgba(62, 62, 62, 0.08) 1px, transparent 0);
+    background-size: 24px 24px;
+  }
+
+  .will-change-transform {
+    will-change: transform;
+  }
+
+  .will-change-opacity {
+    will-change: opacity;
+  }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
