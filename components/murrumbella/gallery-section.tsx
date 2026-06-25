@@ -6,14 +6,16 @@ import { Reveal } from "@/components/reveal"
 import { X, ChevronLeft, ChevronRight } from "lucide-react"
 
 const galleryImages = [
-  { src: "/placeholder.svg?key=rkwft", alt: "Aerial view of Murrumbella property", category: "Aerial" },
-  { src: "/placeholder.svg?key=rjxq5", alt: "Murrumbidgee River at dawn", category: "River" },
-  { src: "/placeholder.svg?key=8iur9", alt: "Native eucalypt woodland", category: "Landscape" },
-  { src: "/placeholder.svg?key=nofoj", alt: "River red gums along the bank", category: "River" },
-  { src: "/placeholder.svg?key=9qnzx", alt: "Open pastoral land", category: "Landscape" },
-  { src: "/placeholder.svg?key=s0jnv", alt: "Sunset over the property", category: "Atmosphere" },
-  { src: "/placeholder.svg?key=9p99m", alt: "Morning mist on the river", category: "Atmosphere" },
-  { src: "/placeholder.svg?key=0blz9", alt: "Native wildlife habitat", category: "Wildlife" },
+  { src: "/aerial-view-of-australian-river-landscape-with-euc.jpg", alt: "Aerial view of Murrumbella and the Murrumbidgee", category: "Aerial" },
+  { src: "/murrumbidgee-river-at-dawn-soft-morning-mist-eucal.jpg", alt: "Murrumbidgee River at dawn with morning mist", category: "River" },
+  { src: "/australian-eucalyptus-woodland-morning-light-misty.jpg", alt: "Native eucalypt woodland in morning light", category: "Landscape" },
+  { src: "/aerial-topographic-map-view-of-australian-river-pr.jpg", alt: "Aerial topographic view of the river corridor", category: "Aerial" },
+  { src: "/open-pastoral-farmland-australian-countryside-roll.jpg", alt: "Rolling open pastoral land", category: "Landscape" },
+  { src: "/regenerative-farm-australian-landscape-native-gras.jpg", alt: "Regenerative farmland with native grasses", category: "Landscape" },
+  { src: "/australian-conservation-reserve-native-bushland-ri.jpg", alt: "Native bushland conservation reserve", category: "Wildlife" },
+  { src: "/aerial-rural-subdivision-australian-landscape.jpg", alt: "Aerial view of the rural subdivision potential", category: "Aerial" },
+  { src: "/luxury-eco-lodge-australian-bush-timber-architectu.jpg", alt: "Luxury eco-lodge architecture in the Australian bush", category: "Atmosphere" },
+  { src: "/modern-australian-homestead-river-view-architectur.jpg", alt: "Modern homestead with river views", category: "Atmosphere" },
 ]
 
 const categories = ["All", "Aerial", "River", "Landscape", "Atmosphere", "Wildlife"]
