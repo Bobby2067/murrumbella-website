@@ -1,7 +1,8 @@
 import fs from "fs"
 import path from "path"
+import { UploadWidget } from "@/components/review/upload-widget"
 
-export const dynamic = "force-static"
+export const dynamic = "force-dynamic"
 
 function getPhotos(): string[] {
   const dir = path.join(process.cwd(), "public", "photos")
@@ -23,9 +24,12 @@ export default function ReviewPage() {
       <h1 style={{ color: "#fff", marginBottom: "0.5rem", fontSize: "1.5rem" }}>
         Photo Review — {photos.length} images
       </h1>
-      <p style={{ color: "#888", marginBottom: "2rem", fontSize: "0.85rem" }}>
-        Auto-reads /public/photos. Drop new images there, push, and they appear here. Click any photo for full size.
+      <p style={{ color: "#888", marginBottom: "1.5rem", fontSize: "0.85rem" }}>
+        Upload below (auto-downscaled), or browse the current set. Click any photo for full size.
       </p>
+
+      <UploadWidget />
+
       {photos.length === 0 ? (
         <p style={{ color: "#f66" }}>No photos found in /public/photos.</p>
       ) : (
