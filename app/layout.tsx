@@ -1,6 +1,6 @@
 import type React from "react"
 import type { Metadata, Viewport } from "next"
-import { Playfair_Display, Montserrat } from "next/font/google"
+import { Playfair_Display, Montserrat, Cormorant_Garamond, DM_Sans } from "next/font/google"
 import "./globals.css"
 
 const playfair = Playfair_Display({
@@ -15,6 +15,21 @@ const montserrat = Montserrat({
   display: "swap",
   variable: "--font-montserrat",
   weight: ["300", "400", "500", "600"],
+})
+
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-cormorant",
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
+})
+
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-dmsans",
+  weight: ["300", "400", "500"],
 })
 
 export const metadata: Metadata = {
@@ -44,7 +59,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${playfair.variable} ${montserrat.variable} antialiased`}>
+    <html lang="en" className={`${playfair.variable} ${montserrat.variable} ${cormorant.variable} ${dmSans.variable} antialiased`}>
       <body className="font-sans bg-[var(--murrumbella-cream)] text-[var(--charcoal-ridge)] overflow-x-hidden">
         {children}
       </body>
