@@ -218,8 +218,8 @@ export function EstateLanding() {
                 <div className="ml-spec__l">River Frontage</div>
               </div>
               <div className="ml-spec__cell ml-spec__cell--r">
-                <div className="ml-spec__n">Building</div>
-                <div className="ml-spec__l">Approval In Place</div>
+                <div className="ml-spec__n">Approved</div>
+                <div className="ml-spec__l">Dwelling Consent</div>
               </div>
               <div className="ml-spec__cell">
                 <div className="ml-spec__n">40<span className="ml-spec__u"> min</span></div>
@@ -272,7 +272,7 @@ export function EstateLanding() {
           </div>
           <div className="ml-opp__grid">
             {[
-              ["01", "Build", "A building approval is already in place, so you can move straight into planning. Design a home from a blank canvas, sited exactly where the land asks for it — on 164 hectares zoned RU1, well above the 40-hectare threshold for a dwelling."],
+              ["01", "Build", "An approved dwelling consent is already in place, so you can move straight into planning. Design your home from a blank canvas, sited exactly where the land asks for it — on 164 hectares zoned RU1, well above the 40-hectare threshold for a dwelling."],
               ["02", "Conserve", "A living wildlife corridor of native woodland, river red gums and birdlife habitat — with real conservation and long-term carbon value to steward and protect."],
               ["03", "Hold", "River frontage this close to a capital city does not come twice. Scarcity near Canberra underwrites the patient, generational case for simply holding the land."],
             ].map(([n, h, p]) => (
