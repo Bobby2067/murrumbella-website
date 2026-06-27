@@ -1,6 +1,7 @@
 import type React from "react"
 import type { Metadata, Viewport } from "next"
 import { Playfair_Display, Montserrat, Cormorant_Garamond, DM_Sans } from "next/font/google"
+import { ClerkProvider } from "@clerk/nextjs"
 import "./globals.css"
 
 const playfair = Playfair_Display({
@@ -59,10 +60,12 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${playfair.variable} ${montserrat.variable} ${cormorant.variable} ${dmSans.variable} antialiased`}>
-      <body className="font-sans bg-[var(--murrumbella-cream)] text-[var(--charcoal-ridge)] overflow-x-hidden">
-        {children}
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en" className={`${playfair.variable} ${montserrat.variable} ${cormorant.variable} ${dmSans.variable} antialiased`}>
+        <body className="font-sans bg-[var(--murrumbella-cream)] text-[var(--charcoal-ridge)] overflow-x-hidden">
+          {children}
+        </body>
+      </html>
+    </ClerkProvider>
   )
 }

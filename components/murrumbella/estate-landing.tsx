@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState, type FormEvent } from "react"
+import { UserButton, useUser } from "@clerk/nextjs"
 
 /* ---- Image sets (curated from /review picks) ---- */
 const HERO_SLIDES = ["/photos/IMG_3080.jpg", "/photos/IMG_3248.JPEG", "/photos/IMG_2756.jpg"]
@@ -70,6 +71,7 @@ export function EstateLanding() {
   const [lightIdx, setLightIdx] = useState<number | null>(null)
   const [submitted, setSubmitted] = useState(false)
   const revealRoot = useRef<HTMLDivElement>(null)
+  const { isSignedIn } = useUser()
 
   /* nav frosted on scroll */
   useEffect(() => {
@@ -123,9 +125,26 @@ export function EstateLanding() {
     return () => window.removeEventListener("keydown", onKey)
   }, [lightIdx])
 
-  const onSubmit = (e: FormEvent) => {
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    const fd = new FormData(e.currentTarget)
+    const payload = {
+      name: String(fd.get("name") ?? ""),
+      email: String(fd.get("email") ?? ""),
+      phone: String(fd.get("phone") ?? ""),
+      message: String(fd.get("message") ?? ""),
+      interest: "enquiry",
+    }
     setSubmitted(true)
+    try {
+      await fetch("/api/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      })
+    } catch {
+      /* best-effort: the thank-you still shows */
+    }
   }
 
   return (
@@ -138,7 +157,19 @@ export function EstateLanding() {
         <div className="ml-nav__links">
           <a href="#the-land" className="ml-nc ml-navlink">The Land</a>
           <a href="#gallery" className="ml-nc ml-navlink">Gallery</a>
-          <a href="#enquire" className="ml-nc ml-nav__cta">Request Dossier</a>
+          {!isSignedIn ? (
+            <>
+              <a href="/sign-in" className="ml-nc ml-navlink">Sign In</a>
+              <a href="/register" className="ml-nc ml-nav__cta">Register</a>
+            </>
+          ) : (
+            <>
+              <a href="/dossier" className="ml-nc ml-navlink">Dossier</a>
+              <span style={{ display: "inline-flex", alignItems: "center" }}>
+                <UserButton afterSignOutUrl="/" />
+              </span>
+            </>
+          )}
         </div>
       </nav>
 
@@ -156,7 +187,7 @@ export function EstateLanding() {
           </p>
           <div className="ml-hero__cta">
             <a href="#the-land" className="ml-btn ml-btn--solid">Explore the Land</a>
-            <a href="#enquire" className="ml-btn ml-btn--ghost">Request Private Dossier</a>
+            <a href="/register" className="ml-btn ml-btn--ghost">Register for the Dossier</a>
           </div>
         </div>
         <div className="ml-stats">
