@@ -59,8 +59,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  // Publishable key is public by design. Hardcoding it (with an env override)
+  // means the build never fails if Hostinger only injects env vars at runtime.
+  const clerkPublishableKey =
+    process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY ||
+    "pk_test_Y3JlZGlibGUtdGFwaXItNzIuY2xlcmsuYWNjb3VudHMuZGV2JA"
+
   return (
-    <ClerkProvider>
+    <ClerkProvider publishableKey={clerkPublishableKey}>
       <html lang="en" className={`${playfair.variable} ${montserrat.variable} ${cormorant.variable} ${dmSans.variable} antialiased`}>
         <body className="font-sans bg-[var(--murrumbella-cream)] text-[var(--charcoal-ridge)] overflow-x-hidden">
           {children}
