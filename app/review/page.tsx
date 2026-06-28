@@ -1,5 +1,7 @@
 import fs from "fs"
 import path from "path"
+import { auth } from "@clerk/nextjs/server"
+import { redirect } from "next/navigation"
 import { UploadWidget } from "@/components/review/upload-widget"
 
 export const dynamic = "force-dynamic"
@@ -16,7 +18,10 @@ function getPhotos(): string[] {
   }
 }
 
-export default function ReviewPage() {
+export default async function ReviewPage() {
+  const { userId } = await auth()
+  if (!userId) redirect("/sign-in")
+
   const photos = getPhotos()
 
   return (
