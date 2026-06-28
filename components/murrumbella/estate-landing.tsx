@@ -159,12 +159,12 @@ export function EstateLanding() {
           <a href="#gallery" className="ml-nc ml-navlink">Gallery</a>
           {!isSignedIn ? (
             <>
-              <a href="/sign-in" className="ml-nc ml-navlink">Sign In</a>
+              <a href="/sign-in" className="ml-nc ml-authlink">Sign In</a>
               <a href="/register" className="ml-nc ml-nav__cta">Register</a>
             </>
           ) : (
             <>
-              <a href="/dossier" className="ml-nc ml-navlink">Dossier</a>
+              <a href="/dossier" className="ml-nc ml-authlink">Dossier</a>
               <span style={{ display: "inline-flex", alignItems: "center" }}>
                 <UserButton afterSignOutUrl="/" />
               </span>
@@ -454,6 +454,7 @@ const ML_CSS = `
 .ml-nav__brand{text-decoration:none;font-weight:500;font-size:15px;letter-spacing:0.34em;text-transform:uppercase}
 .ml-nav__links{display:flex;align-items:center;gap:clamp(18px,3vw,40px)}
 .ml-navlink{text-decoration:none;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;opacity:.85}
+.ml-authlink{text-decoration:none;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;opacity:.85}
 .ml-nav__cta{text-decoration:none;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;padding:11px 20px;border:1px solid currentColor;border-radius:1px;white-space:nowrap;transition:background .3s ease}
 .ml-nav__cta:hover{background:rgba(255,255,255,0.12)}
 .ml-nc{color:#FAFAF8;transition:color .5s ease}
