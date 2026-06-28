@@ -25,8 +25,8 @@ describe("sales agent UI contract", () => {
 
   it("uses only the panel close control while open", () => {
     const css = readFileSync("components/murrumbella/sales-agent.module.css", "utf8")
-    expect(css).toContain(
-      '.shell[data-open="true"] .launcher {\n  display: none;\n}',
+    expect(css).toMatch(
+      /\.shell\[data-open="true"\] \.launcher \{\r?\n\s*display: none;\r?\n\}/,
     )
   })
 })
