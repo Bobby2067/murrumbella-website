@@ -1,13 +1,10 @@
-import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server"
+import { clerkMiddleware } from "@clerk/nextjs/server"
 
-// Only these require a signed-in user.
-const isProtected = createRouteMatcher(["/dossier(.*)", "/api/document(.*)"])
-
-export default clerkMiddleware(async (auth, req) => {
-  if (isProtected(req)) {
-    await auth.protect()
-  }
-})
+// Run Clerk on these routes so auth() works in the page/route. We do NOT call
+// auth.protect() here — the /dossier page redirects unauthenticated users to
+// /register itself, and /api/document returns 401/403. This gives clean UX
+// (a real login redirect, not a bare 404) and keeps the homepage untouched.
+export default clerkMiddleware()
 
 // Scope the middleware to ONLY the protected routes. The homepage, register
 // and sign-in pages get Clerk via <ClerkProvider> (client-side) and never
