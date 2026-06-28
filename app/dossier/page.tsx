@@ -46,7 +46,7 @@ export default async function DossierPage() {
         </a>
         <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
           <a href="/" style={{ color: "rgba(250,250,248,0.8)", textDecoration: "none", fontSize: 12, letterSpacing: "0.18em", textTransform: "uppercase" }}>Home</a>
-          <UserButton afterSignOutUrl="/" />
+          <UserButton />
         </div>
       </header>
 

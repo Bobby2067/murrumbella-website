@@ -66,7 +66,7 @@ export default function RootLayout({
     "pk_test_Y3JlZGlibGUtdGFwaXItNzIuY2xlcmsuYWNjb3VudHMuZGV2JA"
 
   return (
-    <ClerkProvider publishableKey={clerkPublishableKey}>
+    <ClerkProvider publishableKey={clerkPublishableKey} afterSignOutUrl="/">
       <html lang="en" className={`${playfair.variable} ${montserrat.variable} ${cormorant.variable} ${dmSans.variable} antialiased`}>
         <body className="font-sans bg-[var(--murrumbella-cream)] text-[var(--charcoal-ridge)] overflow-x-hidden">
           {children}

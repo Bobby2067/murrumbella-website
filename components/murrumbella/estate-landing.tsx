@@ -166,7 +166,7 @@ export function EstateLanding() {
             <>
               <a href="/dossier" className="ml-nc ml-authlink">Dossier</a>
               <span style={{ display: "inline-flex", alignItems: "center" }}>
-                <UserButton afterSignOutUrl="/" />
+                <UserButton />
               </span>
             </>
           )}
