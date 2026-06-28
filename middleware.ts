@@ -11,5 +11,11 @@ export default clerkMiddleware()
 // invoke the secret-key-dependent middleware — so they can't be taken down
 // by a runtime auth/env issue.
 export const config = {
-  matcher: ["/dossier/:path*", "/api/document/:path*", "/review/:path*", "/review"],
+  matcher: [
+    "/dossier/:path*",
+    "/api/document/:path*",
+    "/api/agent/:path*",
+    "/review/:path*",
+    "/review",
+  ],
 }

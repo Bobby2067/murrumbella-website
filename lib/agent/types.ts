@@ -42,6 +42,11 @@ export interface ConversationIdentity {
   accessTier: AccessTier
 }
 
+export interface ConversationTurn {
+  role: "user" | "assistant"
+  content: string
+}
+
 export interface HandoffInput {
   conversationId: string | null
   name: string
