@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState, type FormEvent } from "react"
 import { UserButton, useUser } from "@clerk/nextjs"
+import { SalesAgent } from "./sales-agent"
 
 /* ---- Image sets (curated from /review picks) ---- */
 const HERO_SLIDES = ["/photos/IMG_3080.jpg", "/photos/IMG_3248.JPEG", "/photos/IMG_2756.jpg"]
@@ -432,6 +433,7 @@ export function EstateLanding() {
           </div>
         </div>
       )}
+      <SalesAgent />
     </div>
   )
 }
