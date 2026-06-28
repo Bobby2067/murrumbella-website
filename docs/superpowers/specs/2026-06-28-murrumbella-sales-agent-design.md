@@ -84,18 +84,38 @@ Azure AI Search stores a derived clause/page-level search index. It is a replace
 
 The model receives only the small set of evidence relevant to the buyer's current question.
 
-### Application data layer
+### Neon application and governance layer
+
+Neon is a first-class component of this project and is provisioned, migrated, tested, and monitored with the application. It owns the structured state that connects the website, SharePoint sources, Azure search results, sales conversations, and quality controls.
 
 Neon stores:
 
+- the verified claims registry and approved written/spoken wording;
+- knowledge-source records, canonical URLs, authority, access class, and review ownership;
+- source-version metadata, content hashes, effective dates, and SharePoint item identifiers;
+- citation records connecting a claim or answer to a source page/clause;
+- ingestion runs, failures, freshness status, and last-successful-index timestamps;
 - conversation/session identifiers;
 - minimal transcripts retained for 90 days by default, unless attached with consent to an active buyer enquiry;
-- buyer intent and consented contact details;
-- handoff summaries;
-- feedback and evaluation outcomes;
-- source/citation identifiers used in answers.
+- buyer interests, conversation summaries, access tier, and consented contact details;
+- lead qualification state and human handoff records;
+- feedback, test cases, evaluation runs, and quality outcomes;
+- source and retrieval identifiers used in answers.
 
-It does not become the master store for legislation or dossier files. Evaluation records retained beyond 90 days are de-identified. Consented active-enquiry records can be retained through the sale process and are deleted or de-identified when no longer reasonably required, subject to applicable recordkeeping obligations.
+The initial project schema includes these bounded modules:
+
+- `knowledge_sources` and `source_versions`;
+- `claims`, `claim_sources`, and `citations`;
+- `ingestion_runs` and `ingestion_failures`;
+- `conversations` and `messages`;
+- `buyer_profiles`, `consents`, and `handoffs`;
+- `evaluation_cases`, `evaluation_runs`, and `evaluation_results`.
+
+Database migrations live in the repository and are applied through a controlled deployment step. The existing `registrations` and `document_access` functionality is preserved and migrated only where necessary. Server-side database access continues through the existing `DATABASE_URL`; credentials never reach the browser.
+
+Neon does not become the master store for legislation or dossier files, and it does not duplicate the full Azure search index. SharePoint holds source documents, Azure AI Search holds derived searchable chunks, and Neon holds the durable metadata, governance, relationships, and application state joining them together.
+
+Evaluation records retained beyond 90 days are de-identified. Consented active-enquiry records can be retained through the sale process and are deleted or de-identified when no longer reasonably required, subject to applicable recordkeeping obligations.
 
 ## Truth and claim governance
 
@@ -297,9 +317,9 @@ Production monitoring tracks factual/citation failures, retrieval misses, access
 ## Implementation sequence
 
 1. Reconcile conflicting website and agent claims.
-2. Create the claims registry and source schema.
+2. Create the Neon schema and repository migrations for claims, sources, versions, conversations, consent, handoffs, ingestion status, and evaluations.
 3. Build the SharePoint ingestion and Azure search index for the initial Murrumbella/Yass corpus.
-4. Build the tier-aware retrieval and citation API.
+4. Build the tier-aware retrieval and citation API, using Neon to resolve source metadata, access classes, approved claims, citations, and conversation state.
 5. Rewrite the persona as modular behaviour, policy, sales, and voice prompts generated from this design.
 6. Build the text chatbot and consented handoff.
 7. Build and run the evaluation suite; remediate failures.
