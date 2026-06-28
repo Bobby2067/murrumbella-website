@@ -68,8 +68,8 @@ export function TheRiverSection() {
             </Reveal>
             <Reveal delay={0.5}>
               <div>
-                <p className="font-serif text-2xl text-white mb-2">Water Rights</p>
-                <p className="text-sm text-white/60">Riparian rights for irrigation available</p>
+                <p className="font-serif text-2xl text-white mb-2">River Due Diligence</p>
+                <p className="text-sm text-white/60">Confirm any access or extraction rights independently</p>
               </div>
             </Reveal>
           </div>

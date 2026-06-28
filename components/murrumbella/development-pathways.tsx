@@ -9,35 +9,35 @@ const pathways = [
     icon: Shield,
     title: "Private Estate",
     description:
-      "A house placed high on a ridge with views over the river, the valley and the distant city lights. Space for sheds, workshops, maybe even a private helicopter landing area or short strip for light aircraft, subject to approvals.",
+      "A future home within a large rural holding, shaped around the landscape rather than an existing building. A dwelling is a permitted use in the RU1 zone subject to development consent; no dwelling approval is represented.",
     image: "/modern-australian-homestead-river-view-architectur.jpg",
   },
   {
     icon: Building,
-    title: "Eco-Tourism Retreat",
+    title: "Rural Enterprise",
     description:
-      "Riverfront camping platforms, glamping tents pitched under the stars, discreet eco cabins tucked into the hillside. Guests spend mornings walking through bush tracks, afternoons at the wineries across the road, evenings listening to the night birds.",
+      "Agriculture, low-impact visitor ideas or another rural enterprise can be explored with the right advisers. Their permissibility, servicing and approval pathway must be assessed for the particular proposal.",
     image: "/luxury-eco-lodge-australian-bush-timber-architectu.jpg",
   },
   {
     icon: Grid3X3,
     title: "Rural Subdivision",
     description:
-      "Under current planning controls, 424 Horseshoe Road is eligible to be subdivided into up to four separate lots of around 40 hectares or more. A family compound, staged sales, investment splits, or an exit option as the region grows.",
+      "The 40-hectare minimum lot size is one control relevant to any subdivision investigation; lot yield and approval require site-specific professional and council assessment.",
     image: "/aerial-rural-subdivision-australian-landscape.jpg",
   },
   {
     icon: TreePine,
     title: "Conservation Covenant",
     description:
-      "Protect the land in perpetuity through conservation mechanisms. Potential tax benefits while ensuring ecological preservation of the river corridor and native bushland.",
+      "Explore whether a conservation mechanism could protect parts of the river corridor and native bushland. Ecological, legal and financial outcomes need specialist assessment.",
     image: "/australian-conservation-reserve-native-bushland-ri.jpg",
   },
   {
     icon: Sprout,
     title: "Regenerative Enterprise",
     description:
-      "A working rural holding with a side of tourism. Regenerative agriculture, carbon farming, or native revegetation enterprise. Align investment returns with environmental outcomes while the cleared paddocks give you options.",
+      "A working rural holding may support regenerative agriculture or revegetation ideas. Land capability, infrastructure, approvals and any environmental-market participation all require separate due diligence.",
     image: "/regenerative-farm-australian-landscape-native-gras.jpg",
   },
 ]

@@ -53,15 +53,15 @@ export function StorySection() {
               <Reveal delay={0.2}>
                 <p className="text-body text-[var(--sage-grey)] leading-relaxed">
                   Pockets of cleared country open between the trees. These paddocks give you options. Run some stock,
-                  grow something boutique, or simply keep them as open, grassy spaces for future house sites, cabins or
-                  shared areas.
+                  investigate a rural enterprise, or simply keep them as open, grassy spaces while future uses are
+                  assessed.
                 </p>
               </Reveal>
 
               <Reveal delay={0.3}>
                 <p className="text-body text-[var(--sage-grey)] leading-relaxed">
                   In the end, 424 Horseshoe Road is not just a rural block or a lifestyle property. It is a canvas with
-                  the hard work already done where it matters: position, river, access, zoning, approvals and scale. The
+                  the fundamentals visible where they matter: position, river, access, planning context and scale. The
                   rest is a decision about the story you want to write here.
                 </p>
               </Reveal>

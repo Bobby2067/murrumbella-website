@@ -276,7 +276,7 @@ export function EstateLanding() {
         </div>
         <div className="ml-river__strip">
           <div className="ml-river__stripinner">
-            <p className="ml-river__striptitle">2.5km of frontage · Riparian water rights · A river to fish</p>
+            <p className="ml-river__striptitle">2.5km of frontage · River country · A place to slow down</p>
             <div className="ml-river__fish">
               <div>
                 <div className="ml-river__fishname">Murray Cod</div>
@@ -304,9 +304,9 @@ export function EstateLanding() {
           </div>
           <div className="ml-opp__grid">
             {[
-              ["01", "Build", "At 164 hectares of RU1 land — well above the 40-hectare minimum lot size — a dwelling is a permitted use here, subject to council consent. Design your home from a blank canvas, sited exactly where the land asks for it. (No dwelling has been approved or built; the canvas is yours.)"],
-              ["02", "Conserve", "A living wildlife corridor of native woodland, river red gums and birdlife habitat — with real conservation and long-term carbon value to steward and protect."],
-              ["03", "Hold", "River frontage this close to a capital city does not come twice. Scarcity near Canberra underwrites the patient, generational case for simply holding the land."],
+              ["01", "Build", "At approximately 164 hectares of RU1 land, a dwelling is a permitted use in the RU1 zone subject to development consent; no dwelling approval is represented. Siting, constraints and the full assessment pathway need to be investigated."],
+              ["02", "Conserve", "Native woodland, river red gums and river habitat create a compelling stewardship opportunity. Any covenant, biodiversity or environmental-market outcome needs specialist assessment."],
+              ["03", "Hold", "Substantial river frontage and rural scale near Canberra make this a patient, generational proposition for buyers who value land they do not need to rush."],
             ].map(([n, h, p]) => (
               <div key={n} className="ml-opp__card">
                 <div className="ml-opp__num">{n}</div>

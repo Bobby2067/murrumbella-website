@@ -49,9 +49,8 @@ export function InvestmentSection() {
               Enduring Value
             </h2>
             <p className="text-body text-[var(--sage-grey)] max-w-2xl mx-auto">
-              It is large enough that you can shape it into whatever you decide it should be over the next ten or twenty
-              years — a single remarkable home, a network of retreats, a working rural holding, or a long-term land bank
-              in the path of growth.
+              Its scale creates room to think long term — as a future home, a working rural holding, a conservation
+              project or land held patiently — with each use investigated on its own planning and practical merits.
             </p>
           </div>
         </Reveal>
@@ -82,9 +81,8 @@ export function InvestmentSection() {
             </div>
             <div className="lg:col-span-2">
               <p className="text-body text-white/70 mb-6">
-                Buy once and decide how to structure it over time: a family compound, staged sales, investment splits,
-                or simply an exit option later if the region continues to grow — as Parkwood and the wider Ginninderry
-                vision suggest it will.
+                Murrumbella combines substantial rural scale with proximity to Canberra. Buyers should assess their
+                preferred use, access, servicing, planning controls and title position before forming an investment view.
               </p>
               <div className="grid sm:grid-cols-3 gap-6 pt-6 border-t border-white/10">
                 <div>
@@ -92,12 +90,12 @@ export function InvestmentSection() {
                   <p className="text-xs text-white/50 uppercase tracking-wider">To Canberra Edge</p>
                 </div>
                 <div>
-                  <p className="font-serif text-3xl text-white mb-1">4 Lots</p>
-                  <p className="text-xs text-white/50 uppercase tracking-wider">Subdivision Potential</p>
+                  <p className="font-serif text-3xl text-white mb-1">40ha</p>
+                  <p className="text-xs text-white/50 uppercase tracking-wider">Minimum Lot-Size Control</p>
                 </div>
                 <div>
-                  <p className="font-serif text-3xl text-white mb-1">DA</p>
-                  <p className="text-xs text-white/50 uppercase tracking-wider">Already Approved</p>
+                  <p className="font-serif text-3xl text-white mb-1">RU1</p>
+                  <p className="text-xs text-white/50 uppercase tracking-wider">Site-Specific Assessment</p>
                 </div>
               </div>
             </div>

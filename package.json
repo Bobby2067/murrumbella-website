@@ -10,7 +10,9 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "typecheck": "tsc --noEmit",
-    "db:migrate": "tsx scripts/migrate.ts"
+    "db:migrate": "tsx scripts/migrate.ts",
+    "knowledge:sync": "tsx scripts/knowledge/sync-sharepoint.ts",
+    "knowledge:freshness": "tsx scripts/knowledge/check-freshness.ts"
   },
   "dependencies": {
     "@clerk/nextjs": "^7.5.9",
@@ -54,9 +56,11 @@
     "framer-motion": "latest",
     "input-otp": "1.4.1",
     "lucide-react": "^0.454.0",
-    "next": "15.5.6",
+    "mammoth": "^1.12.0",
+    "next": "15.5.9",
     "next-themes": "^0.4.6",
     "openai": "^6.45.0",
+    "pdfjs-dist": "^6.0.227",
     "react": "^19.2.3",
     "react-day-picker": "9.8.0",
     "react-dom": "^19.2.3",
@@ -71,10 +75,13 @@
     "zod": "3.25.76"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.3.5",
     "@tailwindcss/postcss": "^4.1.9",
     "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "eslint": "^9.39.4",
+    "eslint-config-next": "15.5.9",
     "postcss": "^8.5",
     "tailwindcss": "^4.1.9",
     "tsx": "^4.22.4",
