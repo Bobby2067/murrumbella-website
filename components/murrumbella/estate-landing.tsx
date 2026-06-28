@@ -249,8 +249,8 @@ export function EstateLanding() {
                 <div className="ml-spec__l">River Frontage</div>
               </div>
               <div className="ml-spec__cell ml-spec__cell--r">
-                <div className="ml-spec__n">Approved</div>
-                <div className="ml-spec__l">Dwelling Consent</div>
+                <div className="ml-spec__n">Dwelling</div>
+                <div className="ml-spec__l">Permitted with consent</div>
               </div>
               <div className="ml-spec__cell">
                 <div className="ml-spec__n">40<span className="ml-spec__u"> min</span></div>
@@ -303,7 +303,7 @@ export function EstateLanding() {
           </div>
           <div className="ml-opp__grid">
             {[
-              ["01", "Build", "An approved dwelling consent is already in place, so you can move straight into planning. Design your home from a blank canvas, sited exactly where the land asks for it — on 164 hectares zoned RU1, well above the 40-hectare threshold for a dwelling."],
+              ["01", "Build", "At 164 hectares of RU1 land — well above the 40-hectare minimum lot size — a dwelling is a permitted use here, subject to council consent. Design your home from a blank canvas, sited exactly where the land asks for it. (No dwelling has been approved or built; the canvas is yours.)"],
               ["02", "Conserve", "A living wildlife corridor of native woodland, river red gums and birdlife habitat — with real conservation and long-term carbon value to steward and protect."],
               ["03", "Hold", "River frontage this close to a capital city does not come twice. Scarcity near Canberra underwrites the patient, generational case for simply holding the land."],
             ].map(([n, h, p]) => (
@@ -351,7 +351,7 @@ export function EstateLanding() {
             <h2 className="ml-h2 ml-h2--light">This land is<br />offered privately.</h2>
             <p className="ml-enq__lead">
               Enquiries are handled in strict confidence. Register your interest and we will send the private dossier —
-              title, plans and the approved DA in full.
+              title, deposited plans and the full planning certificate.
             </p>
             <div className="ml-enq__loc">
               <div className="ml-enq__loclabel">Location</div>

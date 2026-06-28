@@ -59,8 +59,8 @@ export default async function DossierPage() {
         <p style={{ fontSize: 16, lineHeight: 1.7, color: "#4a4a44", maxWidth: 620 }}>
           Welcome{name ? `, ${name}` : ""}. You have <strong>{isQualified ? "Qualified" : "Registered"}</strong> access.
           {isQualified
-            ? " The full data room — title, plans, easements and the approved dwelling consent — is available below."
-            : " Below are the property's planning and mapping documents. Title, deposited plans and the approved dwelling consent are released to qualified buyers — request access at the bottom of this page."}
+            ? " The full data room — title, deposited plans, easements and planning documents — is available below."
+            : " Below are the property's planning and mapping documents. Title, deposited plans and easement instruments are released to qualified buyers — request access at the bottom of this page."}
         </p>
       </section>
 
