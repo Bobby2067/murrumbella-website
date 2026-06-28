@@ -89,13 +89,13 @@ The model receives only the small set of evidence relevant to the buyer's curren
 Neon stores:
 
 - conversation/session identifiers;
-- minimal transcripts subject to the privacy policy and retention period;
+- minimal transcripts retained for 90 days by default, unless attached with consent to an active buyer enquiry;
 - buyer intent and consented contact details;
 - handoff summaries;
 - feedback and evaluation outcomes;
 - source/citation identifiers used in answers.
 
-It does not become the master store for legislation or dossier files.
+It does not become the master store for legislation or dossier files. Evaluation records retained beyond 90 days are de-identified. Consented active-enquiry records can be retained through the sale process and are deleted or de-identified when no longer reasonably required, subject to applicable recordkeeping obligations.
 
 ## Truth and claim governance
 
@@ -164,7 +164,7 @@ Search filtering happens before evidence is supplied to the model. The model is 
 
 ### Identity
 
-The agent introduces itself as the "Murrumbella Guide" or "Murrumbella Concierge," clearly stating that it is an AI guide for the privately offered property. It does not call itself a real estate agent or imply professional licensing.
+The agent introduces itself as the **Murrumbella Guide**, clearly stating that it is an AI guide for the privately offered property. It does not call itself a real estate agent or imply professional licensing.
 
 ### Conversation loop
 
