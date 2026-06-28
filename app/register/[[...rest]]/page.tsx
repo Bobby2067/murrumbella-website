@@ -41,7 +41,7 @@ export default function RegisterPage() {
           }}
         >
           Register to access the private dossier — the planning certificate, maps and full
-          gallery. Title, plans and the approved dwelling consent are released to qualified buyers.
+          gallery. Title, deposited plans and easement instruments are released to qualified buyers.
         </p>
       </div>
       <SignUp

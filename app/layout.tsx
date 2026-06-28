@@ -36,7 +36,7 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: "Murrumbella — 406 Acres on the Murrumbidgee River",
   description:
-    "A 406-acre property on the Murrumbidgee River, NSW Australia. Rural zoning with full building entitlement. Offered for private sale by expression of interest.",
+    "A 406-acre (164 ha) property on the Murrumbidgee River, NSW Australia. RU1 rural zoning; a dwelling is a permitted use subject to council consent. Offered for private sale by expression of interest.",
   openGraph: {
     siteName: "Murrumbella",
     title: "Murrumbella — 406 Acres on the Murrumbidgee River",
