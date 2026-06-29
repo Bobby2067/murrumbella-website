@@ -3,7 +3,10 @@ import path from "node:path"
 
 import { neon } from "@neondatabase/serverless"
 
-import { pendingMigrationNames } from "../lib/database/migrations"
+import {
+  pendingMigrationNames,
+  splitSqlStatements,
+} from "../lib/database/migrations"
 
 async function main() {
   const databaseUrl = process.env.DATABASE_URL
@@ -28,10 +31,17 @@ async function main() {
 
   for (const name of pending) {
     const migrationSql = await readFile(path.join(migrationDirectory, name), "utf8")
+    const statements = splitSqlStatements(migrationSql)
+
+    if (statements.length === 0) {
+      throw new Error(`Migration ${name} does not contain any SQL statements.`)
+    }
 
     await sql.transaction((transaction) => [
       transaction`select pg_advisory_xact_lock(718834)`,
-      transaction.query(migrationSql),
+      ...statements.map(
+        (statement) => transaction`${transaction.unsafe(statement)}`,
+      ),
       transaction`insert into schema_migrations (name) values (${name})`,
     ])
 
