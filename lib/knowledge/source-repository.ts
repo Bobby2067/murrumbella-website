@@ -198,7 +198,8 @@ export async function listKnowledgeFreshness(): Promise<FreshnessRow[]> {
     left join lateral (
       select error_message
       from ingestion_failures
-      where source_id = s.id or (source_id is null and source_key = s.source_key)
+      where (source_id = s.id or (source_id is null and source_key = s.source_key))
+        and (v.indexed_at is null or created_at > v.indexed_at)
       order by created_at desc
       limit 1
     ) f on true
@@ -207,13 +208,15 @@ export async function listKnowledgeFreshness(): Promise<FreshnessRow[]> {
   return rows.map((item) => {
     const row = item as Record<string, unknown>
     const nullable = (key: string) => (typeof row[key] === "string" ? row[key] : null)
+    const timestamp = (key: string) =>
+      row[key] instanceof Date ? row[key].toISOString() : nullable(key)
     return {
       sourceKey: stringValue(row, "source_key"),
       title: stringValue(row, "title"),
       temporalStatus: nullable("temporal_status"),
       contentHash: nullable("content_hash"),
-      indexedAt: nullable("indexed_at"),
-      reviewDueAt: nullable("review_due_at"),
+      indexedAt: timestamp("indexed_at"),
+      reviewDueAt: timestamp("review_due_at"),
       lastError: nullable("last_error"),
     }
   })

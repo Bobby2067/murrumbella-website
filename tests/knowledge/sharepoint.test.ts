@@ -94,6 +94,35 @@ describe("SharePoint Graph client", () => {
     expect(fetchImpl.mock.calls[2][0]).toContain("/items/folder/children")
   })
 
+  it("does not recurse into hidden metadata folders", async () => {
+    const fetchImpl = vi
+      .fn<typeof fetch>()
+      .mockResolvedValueOnce(
+        new Response(
+        JSON.stringify({
+          value: [
+            { id: "git-folder", name: ".git", folder: { childCount: 500 } },
+            {
+              id: "document",
+              name: "planning-certificate.pdf",
+              size: 30,
+              eTag: "one",
+              lastModifiedDateTime: "2026-06-02T00:00:00Z",
+              file: { mimeType: "application/pdf" },
+            },
+          ],
+        }),
+        { status: 200, headers: { "Content-Type": "application/json" } },
+        ),
+      )
+      .mockResolvedValue(new Response(JSON.stringify({ value: [] })))
+
+    const files = await listSharePointFiles(fetchImpl, config, "token")
+
+    expect(files.map((file) => file.name)).toEqual(["planning-certificate.pdf"])
+    expect(fetchImpl).toHaveBeenCalledTimes(1)
+  })
+
   it("throws without returning credentials in the error", async () => {
     const fetchImpl = vi.fn<typeof fetch>().mockResolvedValue(
       new Response("unauthorised", { status: 401 }),

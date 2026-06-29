@@ -4,7 +4,7 @@
   "sources": [
     {
       "sourceKey": "murrumbella-planning-certificate-10-7",
-      "sharePointPath": "05_Regulatory/planning-certificate-10-7.pdf",
+      "sharePointPath": "05_Regulatory_and_Environmental/424 HORSESHOE RD MULLION-Copy.pdf",
       "title": "Murrumbella Section 10.7 Planning Certificate",
       "authority": "council",
       "accessTier": "registered",
@@ -16,7 +16,7 @@
     },
     {
       "sourceKey": "murrumbella-title-search",
-      "sharePointPath": "02_Legal_and_Title/title-search.pdf",
+      "sharePointPath": "02_Legal_and_Title/424 HORSESHOE RD MULLION, Title Search.pdf",
       "title": "Title Search — Folio 154/751834",
       "authority": "title",
       "accessTier": "qualified",
@@ -28,7 +28,7 @@
     },
     {
       "sourceKey": "murrumbella-crown-plan",
-      "sharePointPath": "02_Legal_and_Title/crown-plan.pdf",
+      "sharePointPath": "05_Regulatory_and_Environmental/424 horshoe _Crown Plan-Copy-Copy.pdf",
       "title": "Crown Plan 964.1793",
       "authority": "title",
       "accessTier": "qualified",
@@ -40,7 +40,7 @@
     },
     {
       "sourceKey": "murrumbella-dp587571",
-      "sharePointPath": "02_Legal_and_Title/deposited-plan-dp587571.pdf",
+      "sharePointPath": "02_Legal_and_Title/Murrumbella_DP0587571.pdf",
       "title": "Deposited Plan DP587571",
       "authority": "title",
       "accessTier": "qualified",
@@ -52,7 +52,7 @@
     },
     {
       "sourceKey": "murrumbella-dp588350",
-      "sharePointPath": "02_Legal_and_Title/deposited-plan-dp588350.pdf",
+      "sharePointPath": "02_Legal_and_Title/Murrumbella_DP0588350.pdf",
       "title": "Deposited Plan DP588350",
       "authority": "title",
       "accessTier": "qualified",
@@ -64,7 +64,7 @@
     },
     {
       "sourceKey": "murrumbella-dp639390",
-      "sharePointPath": "02_Legal_and_Title/deposited-plan-dp639390.pdf",
+      "sharePointPath": "02_Legal_and_Title/Murrumbella_DP0639390.pdf",
       "title": "Deposited Plan DP639390",
       "authority": "title",
       "accessTier": "qualified",
@@ -76,7 +76,7 @@
     },
     {
       "sourceKey": "murrumbella-dp644034",
-      "sharePointPath": "02_Legal_and_Title/deposited-plan-dp644034.pdf",
+      "sharePointPath": "02_Legal_and_Title/Murrumbella_DP0644034.pdf",
       "title": "Deposited Plan DP644034",
       "authority": "title",
       "accessTier": "qualified",
@@ -88,7 +88,7 @@
     },
     {
       "sourceKey": "murrumbella-dp806324",
-      "sharePointPath": "02_Legal_and_Title/deposited-plan-dp806324.pdf",
+      "sharePointPath": "02_Legal_and_Title/Murrumbella_DP 0806324.pdf",
       "title": "Deposited Plan DP806324",
       "authority": "title",
       "accessTier": "qualified",
@@ -100,7 +100,7 @@
     },
     {
       "sourceKey": "murrumbella-88b-instrument-1",
-      "sharePointPath": "02_Legal_and_Title/instrument-88b-1.pdf",
+      "sharePointPath": "05_Regulatory_and_Environmental/1 HORSESHOE RD MULLION, NSW, 2582_Instrument 88b.pdf",
       "title": "Section 88B Instrument 1",
       "authority": "title",
       "accessTier": "qualified",
@@ -112,7 +112,7 @@
     },
     {
       "sourceKey": "murrumbella-88b-instrument-2",
-      "sharePointPath": "02_Legal_and_Title/instrument-88b-2.pdf",
+      "sharePointPath": "05_Regulatory_and_Environmental/2 HORSESHOE RD MULLION, NSW, 2582_Instrument 88b.pdf",
       "title": "Section 88B Instrument 2",
       "authority": "title",
       "accessTier": "qualified",
@@ -124,7 +124,7 @@
     },
     {
       "sourceKey": "murrumbella-88b-instrument-3",
-      "sharePointPath": "02_Legal_and_Title/instrument-88b-3.pdf",
+      "sharePointPath": "05_Regulatory_and_Environmental/3 HORSESHOE RD MULLION, NSW, 2582_Instrument 88b.pdf",
       "title": "Section 88B Instrument 3",
       "authority": "title",
       "accessTier": "qualified",
@@ -157,7 +157,7 @@
       "temporalStatus": "superseded",
       "reviewOwner": "Planning adviser",
       "reviewIntervalDays": 365,
-      "required": true
+      "required": false
     },
     {
       "sourceKey": "yass-lep-1987-historical",
@@ -169,7 +169,7 @@
       "temporalStatus": "historical",
       "reviewOwner": "Planning adviser",
       "reviewIntervalDays": 365,
-      "required": true
+      "required": false
     },
     {
       "sourceKey": "gunning-lep-1997-historical",
@@ -181,7 +181,7 @@
       "temporalStatus": "historical",
       "reviewOwner": "Planning adviser",
       "reviewIntervalDays": 365,
-      "required": true
+      "required": false
     },
     {
       "sourceKey": "yarrowlumla-lep-2002-historical",
@@ -193,7 +193,7 @@
       "temporalStatus": "historical",
       "reviewOwner": "Planning adviser",
       "reviewIntervalDays": 365,
-      "required": true
+      "required": false
     },
     {
       "sourceKey": "yass-valley-dcp-2024",
@@ -205,7 +205,7 @@
       "temporalStatus": "current",
       "reviewOwner": "Planning adviser",
       "reviewIntervalDays": 60,
-      "required": true
+      "required": false
     },
     {
       "sourceKey": "yass-valley-lsps-2020",
@@ -220,6 +220,162 @@
       "required": false
     },
     {
+      "sourceKey": "yass-valley-fees-charges-2025-26",
+      "sharePointPath": "_Knowledge/Yass Valley/Current/2025_26-fees_and_charges_report.pdf",
+      "title": "Yass Valley Council Fees and Charges 2025-26",
+      "authority": "council",
+      "accessTier": "public",
+      "jurisdiction": "Yass Valley",
+      "temporalStatus": "current",
+      "reviewOwner": "Property owner",
+      "reviewIntervalDays": 90,
+      "required": false
+    },
+    {
+      "sourceKey": "yass-valley-operational-plan-2026-27",
+      "sharePointPath": "_Knowledge/Yass Valley/Current/yass-operational-plan-2026-27.pdf",
+      "title": "Yass Valley Operational Plan 2026-27",
+      "authority": "council",
+      "accessTier": "public",
+      "jurisdiction": "Yass Valley",
+      "temporalStatus": "current",
+      "reviewOwner": "Property owner",
+      "reviewIntervalDays": 90,
+      "required": false
+    },
+    {
+      "sourceKey": "yass-valley-road-standards-policy",
+      "sharePointPath": "_Knowledge/Yass Valley/Current/rd-pol-9-road-standards-policy.pdf",
+      "title": "Yass Valley Road Standards Policy",
+      "authority": "council",
+      "accessTier": "public",
+      "jurisdiction": "Yass Valley",
+      "temporalStatus": "current",
+      "reviewOwner": "Property owner",
+      "reviewIntervalDays": 180,
+      "required": false
+    },
+    {
+      "sourceKey": "yass-valley-unsealed-roads-policy",
+      "sharePointPath": "_Knowledge/Yass Valley/Current/rd-pol-7-unsealed-roads.pdf",
+      "title": "Yass Valley Unsealed Roads Policy",
+      "authority": "council",
+      "accessTier": "public",
+      "jurisdiction": "Yass Valley",
+      "temporalStatus": "current",
+      "reviewOwner": "Property owner",
+      "reviewIntervalDays": 180,
+      "required": false
+    },
+    {
+      "sourceKey": "state-of-yass-valley-2022-24",
+      "sharePointPath": "_Knowledge/Yass Valley/Strategy/state-of-yass-valley-report-2022-2024.pdf",
+      "title": "State of Yass Valley Report 2022-2024",
+      "authority": "council",
+      "accessTier": "public",
+      "jurisdiction": "Yass Valley",
+      "temporalStatus": "current",
+      "reviewOwner": "Property owner",
+      "reviewIntervalDays": 180,
+      "required": false
+    },
+    {
+      "sourceKey": "yass-community-strategic-plan-2024-25",
+      "sharePointPath": "_Knowledge/Yass Valley/Strategy/yass-community-strategic-plan-2024-2025.pdf",
+      "title": "Yass Valley Community Strategic Plan 2024-2025",
+      "authority": "council",
+      "accessTier": "public",
+      "jurisdiction": "Yass Valley",
+      "temporalStatus": "current",
+      "reviewOwner": "Property owner",
+      "reviewIntervalDays": 180,
+      "required": false
+    },
+    {
+      "sourceKey": "southern-tablelands-reds-2023",
+      "sharePointPath": "_Knowledge/Yass Valley/Strategy/southern-tablelands-reds-2023-update.pdf",
+      "title": "Southern Tablelands Regional Economic Development Strategy - 2023 Update",
+      "authority": "council",
+      "accessTier": "public",
+      "jurisdiction": "Yass Valley",
+      "temporalStatus": "current",
+      "reviewOwner": "Property owner",
+      "reviewIntervalDays": 180,
+      "required": false
+    },
+    {
+      "sourceKey": "tablelands-destination-development-plan",
+      "sharePointPath": "_Knowledge/Yass Valley/Strategy/tablelands-destination-development-plan.pdf",
+      "title": "Tablelands Destination Development Plan",
+      "authority": "council",
+      "accessTier": "public",
+      "jurisdiction": "Yass Valley",
+      "temporalStatus": "current",
+      "reviewOwner": "Property owner",
+      "reviewIntervalDays": 180,
+      "required": false
+    },
+    {
+      "sourceKey": "yass-destination-action-plan",
+      "sharePointPath": "_Knowledge/Yass Valley/Strategy/yass-destination-action-plan.pdf",
+      "title": "Yass Destination Action Plan",
+      "authority": "council",
+      "accessTier": "public",
+      "jurisdiction": "Yass Valley",
+      "temporalStatus": "current",
+      "reviewOwner": "Property owner",
+      "reviewIntervalDays": 180,
+      "required": false
+    },
+    {
+      "sourceKey": "canberra-region-economic-development-strategy-2022",
+      "sharePointPath": "_Knowledge/Yass Valley/Strategy/canberra-region-economic-development-strategy-2022.pdf",
+      "title": "Canberra Region Economic Development Strategy 2022",
+      "authority": "council",
+      "accessTier": "public",
+      "jurisdiction": "Yass Valley",
+      "temporalStatus": "current",
+      "reviewOwner": "Property owner",
+      "reviewIntervalDays": 180,
+      "required": false
+    },
+    {
+      "sourceKey": "yass-valley-council-design-report-2023",
+      "sharePointPath": "_Knowledge/Yass Valley/Strategy/yass-valley-council-design-report-2023.pdf",
+      "title": "Yass Valley Council Design Report 2023",
+      "authority": "council",
+      "accessTier": "public",
+      "jurisdiction": "Yass Valley",
+      "temporalStatus": "current",
+      "reviewOwner": "Property owner",
+      "reviewIntervalDays": 180,
+      "required": false
+    },
+    {
+      "sourceKey": "yass-valley-ossms-strategy",
+      "sharePointPath": "_Knowledge/Yass Valley/Strategy/ossms-strategy-yass-valley-council.pdf",
+      "title": "Yass Valley On-site Sewage Management Strategy",
+      "authority": "council",
+      "accessTier": "public",
+      "jurisdiction": "Yass Valley",
+      "temporalStatus": "current",
+      "reviewOwner": "Property owner",
+      "reviewIntervalDays": 180,
+      "required": false
+    },
+    {
+      "sourceKey": "yass-valley-climate-change-action-plan",
+      "sharePointPath": "_Knowledge/Yass Valley/Strategy/climate-change-action-plan.pdf",
+      "title": "Yass Valley Climate Change Action Plan",
+      "authority": "council",
+      "accessTier": "public",
+      "jurisdiction": "Yass Valley",
+      "temporalStatus": "current",
+      "reviewOwner": "Property owner",
+      "reviewIntervalDays": 180,
+      "required": false
+    },
+    {
       "sourceKey": "nsw-epa-act-1979",
       "sharePointPath": "_Knowledge/NSW Legislation/environmental-planning-and-assessment-act-1979.pdf",
       "title": "Environmental Planning and Assessment Act 1979",
@@ -229,7 +385,7 @@
       "temporalStatus": "current",
       "reviewOwner": "Planning adviser",
       "reviewIntervalDays": 30,
-      "required": true
+      "required": false
     },
     {
       "sourceKey": "nsw-water-management-act-2000",
@@ -241,7 +397,7 @@
       "temporalStatus": "current",
       "reviewOwner": "Planning adviser",
       "reviewIntervalDays": 30,
-      "required": true
+      "required": false
     },
     {
       "sourceKey": "nsw-biodiversity-conservation-act-2016",
@@ -253,7 +409,7 @@
       "temporalStatus": "current",
       "reviewOwner": "Planning adviser",
       "reviewIntervalDays": 30,
-      "required": true
+      "required": false
     },
     {
       "sourceKey": "nsw-local-land-services-act-2013",
@@ -265,7 +421,7 @@
       "temporalStatus": "current",
       "reviewOwner": "Planning adviser",
       "reviewIntervalDays": 30,
-      "required": true
+      "required": false
     },
     {
       "sourceKey": "nsw-rural-fires-act-1997",
@@ -277,7 +433,7 @@
       "temporalStatus": "current",
       "reviewOwner": "Planning adviser",
       "reviewIntervalDays": 30,
-      "required": true
+      "required": false
     },
     {
       "sourceKey": "nsw-biosecurity-act-2015",
@@ -325,7 +481,7 @@
       "temporalStatus": "current",
       "reviewOwner": "Planning adviser",
       "reviewIntervalDays": 30,
-      "required": true
+      "required": false
     },
     {
       "sourceKey": "nsw-sepp-biodiversity-conservation-2021",
@@ -337,7 +493,7 @@
       "temporalStatus": "current",
       "reviewOwner": "Planning adviser",
       "reviewIntervalDays": 30,
-      "required": true
+      "required": false
     },
     {
       "sourceKey": "nsw-sepp-resilience-hazards-2021",
@@ -349,7 +505,7 @@
       "temporalStatus": "current",
       "reviewOwner": "Planning adviser",
       "reviewIntervalDays": 30,
-      "required": true
+      "required": false
     },
     {
       "sourceKey": "cth-epbc-act-1999",

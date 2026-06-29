@@ -133,7 +133,12 @@ export async function listSharePointFiles(
       for (const item of Array.isArray(page.value) ? page.value : []) {
         const file = fileFromItem(item, parentPath)
         if (file) files.push(file)
-        if (item.folder && typeof item.id === "string" && typeof item.name === "string") {
+        if (
+          item.folder &&
+          typeof item.id === "string" &&
+          typeof item.name === "string" &&
+          !item.name.startsWith(".")
+        ) {
           folders.push({ id: item.id, name: item.name })
         }
       }
