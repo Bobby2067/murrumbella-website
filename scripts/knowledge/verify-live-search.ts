@@ -13,6 +13,18 @@ const checks = [
     tier: "qualified" as const,
     expected: /(Section 88B Instrument|Deposited Plan DP806324)/i,
   },
+  {
+    name: "current Yass development controls",
+    query: "Yass rural large lot environmental zone development access bushfire controls",
+    tier: "public" as const,
+    expected: /Yass Valley Development Control Plan 2024/i,
+  },
+  {
+    name: "superseded Yass planning instrument",
+    query: "Yass Valley subdivision using average lot sizes before August 2016",
+    tier: "public" as const,
+    expected: /prior consolidation/i,
+  },
 ]
 
 async function main() {

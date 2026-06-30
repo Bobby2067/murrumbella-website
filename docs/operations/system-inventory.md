@@ -16,11 +16,12 @@ Updated 30 June 2026. This file deliberately contains no passwords, API keys or 
 
 ## Knowledge status
 
-- 26 allowlisted documents are indexed successfully.
+- 29 allowlisted documents are indexed successfully.
 - Property evidence includes the planning certificate, title search, Crown plan, five deposited plans and three Section 88B instruments.
 - The five plans and three Section 88B instruments have a searchable OCR layer while preserving their original visual pages.
-- Current Yass material includes the Yass Valley LEP 2013 plus council plans, policies, strategies and regional economic/tourism reports.
-- The prior LEP, older historical instruments, Yass Valley DCP and the shortlisted legislation remain in the manifest as non-blocking `PENDING` work.
+- Current Yass material includes the Yass Valley LEP 2013, the Yass Valley DCP 2024, council plans, policies, strategies and regional economic/tourism reports.
+- Historical planning material includes the LEP consolidation immediately preceding Amendment No. 1 and the final repealed consolidation of Yass LEP 1987. The latter is not represented as the exact point-in-time text applying to the 1990 development consent.
+- Other older instruments and the shortlisted NSW/Commonwealth legislation remain in the manifest as non-blocking `PENDING` work.
 - Public, registered and qualified access labels are stored on every search chunk. Title plans and Section 88B instruments are `qualified` evidence.
 
 ## Security state
