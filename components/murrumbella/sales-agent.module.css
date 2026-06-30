@@ -164,11 +164,30 @@
   animation: message-in 180ms ease both;
 }
 
-.message p {
+.messageText {
+  display: grid;
+  gap: 9px;
+}
+
+.messageText p,
+.messageText ul,
+.messageText ol {
   margin: 0;
-  white-space: pre-wrap;
   font-size: 14px;
   line-height: 1.62;
+}
+
+.messageText ul,
+.messageText ol {
+  padding-left: 19px;
+}
+
+.messageText li + li {
+  margin-top: 5px;
+}
+
+.messageText strong {
+  font-weight: 650;
 }
 
 .guideMessage {
