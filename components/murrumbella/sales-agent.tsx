@@ -80,6 +80,77 @@ async function responsePayload<T>(response: Response): Promise<T> {
   return payload
 }
 
+function AgentInline({ text }: { text: string }) {
+  return text.split(/(\*\*[^*]+\*\*)/g).map((part, index) =>
+    part.startsWith("**") && part.endsWith("**") ? (
+      <strong key={index}>{part.slice(2, -2)}</strong>
+    ) : (
+      part
+    ),
+  )
+}
+
+function AgentMarkdown({ text }: { text: string }) {
+  const lines = text.split(/\r?\n/)
+  const blocks: React.ReactNode[] = []
+
+  for (let index = 0; index < lines.length;) {
+    const line = lines[index].trim()
+
+    if (!line) {
+      index += 1
+      continue
+    }
+
+    const unordered = line.match(/^[-*]\s+(.+)/)
+    const ordered = line.match(/^\d+[.)]\s+(.+)/)
+
+    if (unordered || ordered) {
+      const items: string[] = []
+      const orderedList = Boolean(ordered)
+
+      while (index < lines.length) {
+        const itemLine = lines[index].trim()
+        const match = orderedList
+          ? itemLine.match(/^\d+[.)]\s+(.+)/)
+          : itemLine.match(/^[-*]\s+(.+)/)
+        if (!match) break
+        items.push(match[1])
+        index += 1
+      }
+
+      const List = orderedList ? "ol" : "ul"
+      blocks.push(
+        <List key={`list-${index}`}>
+          {items.map((item, itemIndex) => (
+            <li key={itemIndex}><AgentInline text={item} /></li>
+          ))}
+        </List>,
+      )
+      continue
+    }
+
+    const paragraph: string[] = []
+    while (index < lines.length) {
+      const paragraphLine = lines[index].trim()
+      if (
+        !paragraphLine ||
+        /^[-*]\s+/.test(paragraphLine) ||
+        /^\d+[.)]\s+/.test(paragraphLine)
+      ) {
+        break
+      }
+      paragraph.push(paragraphLine)
+      index += 1
+    }
+    blocks.push(
+      <p key={`paragraph-${index}`}><AgentInline text={paragraph.join(" ")} /></p>,
+    )
+  }
+
+  return <div className={styles.messageText}>{blocks}</div>
+}
+
 export function SalesAgent() {
   const [open, setOpen] = useState(false)
   const [messages, setMessages] = useState<ChatMessage[]>([WELCOME])
@@ -254,7 +325,7 @@ export function SalesAgent() {
                 {message.role === "assistant" && (
                   <div className={styles.messageLabel}>Guide</div>
                 )}
-                <p>{message.text}</p>
+                <AgentMarkdown text={message.text} />
 
                 {message.citations && message.citations.length > 0 && (
                   <details className={styles.citations}>
@@ -296,7 +367,7 @@ export function SalesAgent() {
                     className={styles.followUp}
                     onClick={() => void sendMessage(message.followUpQuestion || "")}
                   >
-                    <span>{message.followUpQuestion}</span>
+                    <span><AgentInline text={message.followUpQuestion} /></span>
                     <ChevronRight size={14} aria-hidden="true" />
                   </button>
                 )}

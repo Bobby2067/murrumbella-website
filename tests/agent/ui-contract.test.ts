@@ -18,6 +18,13 @@ describe("sales agent UI contract", () => {
     expect(source).not.toContain("localStorage")
   })
 
+  it("renders model markdown instead of exposing formatting markers to buyers", () => {
+    const source = readFileSync("components/murrumbella/sales-agent.tsx", "utf8")
+    expect(source).toContain("<AgentMarkdown text={message.text} />")
+    expect(source).toContain("<AgentInline text={message.followUpQuestion} />")
+    expect(source).not.toContain("<p>{message.text}</p>")
+  })
+
   it("is mounted once on the property landing page", () => {
     const source = readFileSync("components/murrumbella/estate-landing.tsx", "utf8")
     expect(source.match(/<SalesAgent\s*\/>/g)).toHaveLength(1)
