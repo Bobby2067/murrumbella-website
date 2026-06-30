@@ -13,6 +13,8 @@ Private property website and grounded AI sales guide for Murrumbella, 424 Horses
 
 SharePoint remains the original-document store. Azure Search holds searchable text chunks. Neon holds governance, provenance and application state. The browser never receives SharePoint, Azure or database credentials.
 
+Current service status and the credential-change runbook are in `docs/operations/system-inventory.md` and `docs/operations/credential-rotation.md`.
+
 ## Local setup
 
 1. Install Node.js 20+ and pnpm.

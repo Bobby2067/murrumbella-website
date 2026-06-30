@@ -31,3 +31,4 @@ package-lock.json
 .vscode/
 .idea/
 Thumbs.db
+/tmp/
