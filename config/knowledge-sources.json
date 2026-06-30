@@ -149,27 +149,33 @@
     },
     {
       "sourceKey": "yass-valley-lep-2013-prior",
-      "sharePointPath": "_Knowledge/Yass Valley/Historical/yass-valley-lep-2013-prior-consolidation.pdf",
+      "sharePointPath": "_Knowledge/Yass Valley/Historical/yass-valley-lep-2013-prior-consolidation.html",
       "title": "Yass Valley Local Environmental Plan 2013 — prior consolidation",
       "authority": "planning_instrument",
       "accessTier": "public",
       "jurisdiction": "Yass Valley",
       "temporalStatus": "superseded",
+      "canonicalUrl": "https://legislation.nsw.gov.au/view/whole/html/2016-01-27/epi-2013-0391",
+      "effectiveFrom": "2016-01-27",
+      "effectiveTo": "2016-08-11",
       "reviewOwner": "Planning adviser",
       "reviewIntervalDays": 365,
-      "required": false
+      "required": true
     },
     {
       "sourceKey": "yass-lep-1987-historical",
-      "sharePointPath": "_Knowledge/Yass Valley/Historical/yass-lep-1987.pdf",
-      "title": "Yass Local Environmental Plan 1987",
+      "sharePointPath": "_Knowledge/Yass Valley/Historical/yass-lep-1987-final-repealed.html",
+      "title": "Yass Local Environmental Plan 1987 — final repealed consolidation",
       "authority": "planning_instrument",
       "accessTier": "public",
       "jurisdiction": "Yass Valley",
       "temporalStatus": "historical",
+      "canonicalUrl": "https://legislation.nsw.gov.au/view/whole/html/repealed/current/epi-1987-0388",
+      "effectiveFrom": "2008-12-15",
+      "effectiveTo": "2013-07-18",
       "reviewOwner": "Planning adviser",
       "reviewIntervalDays": 365,
-      "required": false
+      "required": true
     },
     {
       "sourceKey": "gunning-lep-1997-historical",
@@ -203,9 +209,11 @@
       "accessTier": "public",
       "jurisdiction": "Yass Valley",
       "temporalStatus": "current",
+      "canonicalUrl": "https://www.yassvalley.nsw.gov.au/files/assets/public/v/1/our-services/planning-and-building/yass-valley-dcp-2024.pdf",
+      "effectiveFrom": "2024-08-01",
       "reviewOwner": "Planning adviser",
       "reviewIntervalDays": 60,
-      "required": false
+      "required": true
     },
     {
       "sourceKey": "yass-valley-lsps-2020",
