@@ -59,11 +59,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  // Publishable key is public by design. Hardcoding it (with an env override)
-  // means the build never fails if Hostinger only injects env vars at runtime.
-  const clerkPublishableKey =
-    process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY ||
-    "pk_test_Y3JlZGlibGUtdGFwaXItNzIuY2xlcmsuYWNjb3VudHMuZGV2JA"
+  const clerkPublishableKey = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY
+  if (!clerkPublishableKey) {
+    throw new Error(
+      "Clerk publishable key is not configured. Set NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY env var.",
+    )
+  }
 
   return (
     <ClerkProvider publishableKey={clerkPublishableKey}>

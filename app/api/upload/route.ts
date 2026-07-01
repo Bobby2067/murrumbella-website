@@ -28,7 +28,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Invalid JSON body." }, { status: 400 })
   }
 
-  if (secret && body.secret !== secret) {
+  if (!secret || body.secret !== secret) {
     return NextResponse.json({ error: "Invalid passcode." }, { status: 401 })
   }
 
