@@ -59,12 +59,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const clerkPublishableKey = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY
-  if (!clerkPublishableKey) {
-    throw new Error(
-      "Clerk publishable key is not configured. Set NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY env var.",
-    )
-  }
+  // The publishable key is public by design — it ships to every browser. A
+  // hardcoded fallback keeps the whole site (incl. the public homepage) alive
+  // even when Hostinger injects env vars only at runtime, since NEXT_PUBLIC_*
+  // vars are inlined at BUILD time. Override with a pk_live_ key via env when
+  // moving to the production Clerk instance.
+  const clerkPublishableKey =
+    process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY ||
+    "pk_test_Y3JlZGlibGUtdGFwaXItNzIuY2xlcmsuYWNjb3VudHMuZGV2JA"
 
   return (
     <ClerkProvider publishableKey={clerkPublishableKey}>
