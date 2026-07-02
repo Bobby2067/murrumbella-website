@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server"
 import { auth } from "@clerk/nextjs/server"
 import { recordLead } from "@/lib/db"
+import { notifyOwner } from "@/lib/notify"
 
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
@@ -33,6 +34,14 @@ export async function POST(req: Request) {
     interest: body.interest ?? null,
     message: body.message ?? null,
   })
+
+  await notifyOwner("Murrumbella — new enquiry", [
+    `Name: ${body.name || "(not given)"}`,
+    `Email: ${body.email}`,
+    body.phone ? `Phone: ${body.phone}` : null,
+    body.interest ? `Interest: ${body.interest}` : null,
+    body.message ? `Message: ${body.message}` : null,
+  ])
 
   return NextResponse.json({ ok: true })
 }

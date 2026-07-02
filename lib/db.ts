@@ -19,21 +19,35 @@ export interface RegistrationInput {
   message?: string | null
 }
 
-/** Insert a registration, but only once per Clerk user (best-effort). */
-export async function ensureRegistration(input: RegistrationInput): Promise<void> {
+/** Insert a registration, but only once per Clerk user (best-effort).
+ *  Returns true only when a NEW row was inserted, so callers can react
+ *  (e.g. notify the owner) without firing on every repeat visit. */
+export async function ensureRegistration(input: RegistrationInput): Promise<boolean> {
   try {
     const sql = getDb()
     if (input.clerkUserId) {
-      const existing = await sql`select id from registrations where clerk_user_id = ${input.clerkUserId} limit 1`
-      if (existing.length > 0) return
+      // Single statement (not check-then-insert) so two concurrent first
+      // visits can't both pass a separate existence check and double-insert.
+      const rows = await sql`
+        insert into registrations (clerk_user_id, name, email, phone, interest, message)
+        select ${input.clerkUserId}, ${input.name ?? null}, ${input.email},
+               ${input.phone ?? null}, ${input.interest ?? null}, ${input.message ?? null}
+        where not exists (
+          select 1 from registrations where clerk_user_id = ${input.clerkUserId}
+        )
+        returning id
+      `
+      return rows.length > 0
     }
     await sql`
       insert into registrations (clerk_user_id, name, email, phone, interest, message)
       values (${input.clerkUserId ?? null}, ${input.name ?? null}, ${input.email},
               ${input.phone ?? null}, ${input.interest ?? null}, ${input.message ?? null})
     `
+    return true
   } catch (e) {
     console.error("ensureRegistration failed:", e)
+    return false
   }
 }
 

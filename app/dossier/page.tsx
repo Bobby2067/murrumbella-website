@@ -3,6 +3,7 @@ import { redirect } from "next/navigation"
 import { UserButton } from "@clerk/nextjs"
 import { DOSSIER_DOCS, type DossierDoc, type Tier } from "@/lib/tiers"
 import { ensureRegistration } from "@/lib/db"
+import { notifyOwner } from "@/lib/notify"
 
 export const metadata = { title: "Private Dossier — Murrumbella" }
 export const dynamic = "force-dynamic"
@@ -26,8 +27,16 @@ export default async function DossierPage() {
   const email = user?.primaryEmailAddress?.emailAddress ?? ""
   const name = user?.fullName ?? user?.firstName ?? ""
 
-  // Best-effort: record this registered user once.
-  await ensureRegistration({ clerkUserId: userId, name: name || null, email: email || "unknown" })
+  // Best-effort: record this registered user once; email the owner on the
+  // first visit only (ensureRegistration returns true only for a new row).
+  const isNew = await ensureRegistration({ clerkUserId: userId, name: name || null, email: email || "unknown" })
+  if (isNew) {
+    await notifyOwner("Murrumbella — new dossier registration", [
+      `Name: ${name || "(not given)"}`,
+      `Email: ${email || "(unknown)"}`,
+      `Tier: ${tier}`,
+    ])
+  }
 
   const grouped = groupByCategory(DOSSIER_DOCS)
 
